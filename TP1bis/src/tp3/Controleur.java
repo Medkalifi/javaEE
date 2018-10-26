@@ -14,12 +14,23 @@ public class Controleur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
   
-    public Controleur() {
-        super();
-    }
+    public Controleur() {    super();    }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		faire(request, response);	
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		faire(request, response);	
+		
+	}
+		
+	
+	protected void faire(HttpServletRequest request, 
+			HttpServletResponse response)
+					throws ServletException, IOException {
 		ServletContext ctx = getServletContext();
 		RequestDispatcher dispatch = null;
 		String page = null;
@@ -46,12 +57,10 @@ public class Controleur extends HttpServlet {
 		}
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-	}
+
+
+
+}
 
 	
 	
@@ -74,4 +83,3 @@ public class Controleur extends HttpServlet {
 	
 	
 	
-}

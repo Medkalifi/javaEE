@@ -1,6 +1,8 @@
 package tp3;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
@@ -8,19 +10,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import mesBeans.Client;
+import mesBeans.Livre;
+
 
 public class FormLivre extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
-    public FormLivre() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    public FormLivre() {    super();  }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//faire(request, response);
+		
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		faire(request, response);
+	}
+	  
+	protected void faire(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		HttpSession session = request.getSession();
-		String user = (String) session.getAttribute("user");
+		Client client = (Client) session.getAttribute("user");
+		String user = client.getUser();
+		ArrayList<Livre> liste = client.getLivres();
 		
 		ServletOutputStream sortie = response.getOutputStream();
 		sortie.println("<html><head><title>Livre</title>"); 
@@ -35,13 +48,17 @@ public class FormLivre extends HttpServlet {
 		" <option>Roman</option> "+ " <option>Bande dessin&eacute;e</option>"+
 		"<option>Histoire</option>" + "</select>" ); 
 		sortie.println("<input type=submit name=Valider/>"); 
-		sortie.println("</form></body></html>");
+		sortie.println("</form>");
+		sortie.println("<p> vos réservations: </p>");
+		for (Livre livre : liste) {
+			sortie.println(livre.toString());
+			
+		}
+		sortie.println("</body></html>");
 		sortie.close();
-	}
-
-	  
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
+	
+	
 
 }
