@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class Controleur extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+	private static final long serialVersionUID = 1L;    
   
     public Controleur() {    super();    }
-
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		faire(request, response);	
@@ -26,7 +24,7 @@ public class Controleur extends HttpServlet {
 		faire(request, response);	
 		
 	}
-
+	
 	protected void faire(HttpServletRequest request, 
 			HttpServletResponse response)
 					throws ServletException, IOException {
@@ -37,19 +35,19 @@ public class Controleur extends HttpServlet {
 		page = request.getParameter("page");
 		
 		if (page == null) {
-			dispatch = ctx.getRequestDispatcher("/FormLogin");
+			dispatch = ctx.getRequestDispatcher("/vLogin.jsp");
 			dispatch.forward(request, response);
 		}else {
 			if("1".equals(page)) {
 				dispatch = ctx.getRequestDispatcher("/CtlLogin");
 				dispatch.include(request, response);
-				dispatch = ctx.getRequestDispatcher("/FormLivre");
+				dispatch = ctx.getRequestDispatcher("/vLivre.jsp");
 				dispatch.forward(request, response);
 			}else {
 				if("2".equals(page)) {
 					dispatch = ctx.getRequestDispatcher("/CtlLivre");
 					dispatch.include(request, response);
-					dispatch = ctx.getRequestDispatcher("/FormLivre");
+					dispatch = ctx.getRequestDispatcher("/vLivre.jsp");
 					dispatch.forward(request, response);
 				}
 			}
