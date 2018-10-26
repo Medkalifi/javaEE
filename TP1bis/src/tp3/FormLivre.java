@@ -36,6 +36,7 @@ public class FormLivre extends HttpServlet {
 		ArrayList<Livre> liste = client.getLivres();
 		
 		ServletOutputStream sortie = response.getOutputStream();
+		
 		sortie.println("<html><head><title>Livre</title>"); 
 		sortie.println("</head><body> <h3> Bonjour :"+user+"</h3>"
 				+ " <h1>Ouvrage demandé</h1>");
@@ -50,9 +51,10 @@ public class FormLivre extends HttpServlet {
 		sortie.println("<input type=submit name=Valider/>"); 
 		sortie.println("</form>");
 		sortie.println("<p> vos réservations: </p>");
+		//
 		for (Livre livre : liste) {
 			sortie.println(livre.toString());
-			
+			sortie.println("<br>");
 		}
 		sortie.println("</body></html>");
 		sortie.close();

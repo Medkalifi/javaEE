@@ -36,13 +36,15 @@ public class CtlLivre extends HttpServlet {
 	protected void faire(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String titre = request.getParameter("titre");
 		String categorie = request.getParameter("categorie");
-		String nomParam, valeurParam;
+		
 		
 		HttpSession session = request.getSession();
 		
 		Client client = (Client) session.getAttribute("user");
 		client.ajoutLivre(titre, categorie);
 		
+		
+		/*String nomParam, valeurParam;
 		Enumeration e = request.getParameterNames();
 		
 		ServletOutputStream sortie = response.getOutputStream();
@@ -62,7 +64,7 @@ public class CtlLivre extends HttpServlet {
 		
 							}
 		sortie.println("</body></html>");
-		sortie.close();
+		sortie.close();*/
 	}
 	
 	

@@ -26,8 +26,7 @@ public class Controleur extends HttpServlet {
 		faire(request, response);	
 		
 	}
-		
-	
+
 	protected void faire(HttpServletRequest request, 
 			HttpServletResponse response)
 					throws ServletException, IOException {
