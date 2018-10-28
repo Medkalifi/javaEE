@@ -11,6 +11,8 @@
 <jsp:useBean id="user" class="mesBeans.Client" scope="session"></jsp:useBean>
 </head>
 <body>
+		<jsp:include page="vEntete.html" flush="true"/>
+
  <h3> Bonjour <jsp:getProperty property="user" name="user" /></h3>
 		<h1>Ouvrage demandé</h1>
 		<form method='post' action='Controleur?page=2'> 
@@ -34,5 +36,7 @@
 		%>
 		
 		<a href="Controleur?page=3">Se deconnecter</a>
+		<jsp:include page="vPiedPage.jsp" flush="true"/>
+		
 </body>
 </html>

@@ -2,7 +2,7 @@
     <wb-module deploy-name="TP1bis">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="TP1bis"/>
         <property name="java-output-path" value="/TP1bis/build/classes"/>
+        <property name="context-root" value="TP1bis"/>
     </wb-module>
 </project-modules>

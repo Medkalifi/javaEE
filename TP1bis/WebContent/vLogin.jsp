@@ -14,7 +14,7 @@
 		<p> Quel est votre nom ? </p>
 		<input name=nom type=text size=25/>
 		<p> Votre mot de passe ? </p>
-		<input name=mdp type=text size=25/>
+		<input name=mdp type=password size=25/>
 		<input type=submit name='Valider'/>
 		</form>
 		
