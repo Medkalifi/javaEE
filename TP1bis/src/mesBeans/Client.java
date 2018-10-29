@@ -2,13 +2,13 @@ package mesBeans;
 
 import java.util.ArrayList;
 public class Client {
-	private String user;
+	private String nomAdherent;
 	private String mdp;
 	private ArrayList<Livre> livres;
 	
 		
 	public Client() {
-		user="inconnu";
+		nomAdherent="inconnu";
 		mdp="walo";
 		livres= new ArrayList<Livre>();
 			}
@@ -16,16 +16,16 @@ public class Client {
 	public Client(String user, String mdp) {
 		this();                                     //attention constructeur courant   Fait appel au contructeur par defaut
 		//super() fait appel au constructeur par defaut de la classe mere et ici la classe mere et la class objet
-		this.user = user;
+		this.nomAdherent = user;
 		this.mdp = mdp;
 	}
 
 	public String getUser() {
-		return user;
+		return nomAdherent;
 	}
 
 	public void setUser(String user) {
-		this.user = user;
+		this.nomAdherent = user;
 	}
 
 	public String getMdp() {

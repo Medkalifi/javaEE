@@ -20,19 +20,31 @@ public class Livre  implements Serializable{
 		return categorie;
 	}
 	
-	public void setTitre( String titre) {
-		this.categorie = titre;
+	public void setTitre( String newTitre) {
+		titre = newTitre;
 	}
 	
-	public void setCategorie (String categorie) {
-		this.categorie = categorie;
+	public void setCategorie (String newCategorie) {
+		categorie = newCategorie;
 	}
 	
 	public Livre(String titre, String categorie) {
-		super();
-		this.titre = titre;
-		this.categorie = categorie;
+		titre = titre;
+		categorie = categorie;
 	}
+	
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+	if (obj instanceof Livre )
+	
+	 {
+		Livre autreLivre =(Livre)obj;
+	if (this.getTitre().equals(autreLivre.getCategorie()))
+			return true;
+	}
+	return false;
+}
 
 	@Override
 	public String toString() {
