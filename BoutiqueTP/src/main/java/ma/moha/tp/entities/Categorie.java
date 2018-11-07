@@ -14,7 +14,9 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
  @Entity
 public class Categorie implements Serializable {
-	 @Id
+
+	private static final long serialVersionUID = 1L;
+	@Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idcategorie;
 	 @NotEmpty
@@ -28,6 +30,8 @@ public class Categorie implements Serializable {
 	private String nomPhoto;
 	@OneToMany(mappedBy="categorie")
 	private Collection<Produit> produits;
+	
+	
 	public Long getIdcategorie() {
 		return idcategorie;
 	}

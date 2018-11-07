@@ -1,5 +1,6 @@
 package ma.moha.tp.entities;
 
+import ma.moha.tp.entities.*;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -8,10 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 @Entity
+@Table(name="produits")
 public class Produit implements Serializable {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -25,7 +28,7 @@ public class Produit implements Serializable {
 	private String photo;
 	private int quantite;
 	@ManyToOne
-	@JoinColumn(name="ID_CAT")
+	@JoinColumn(name="idcategorie")
 	private Categorie categorie;
 	
 	public Long getIdProduit() {
@@ -90,7 +93,21 @@ public class Produit implements Serializable {
 		this.quantite = quantite;
 	}
 	
+	public String getNomCategorie(){
+	    String nomCategorie = null;
+		return nomCategorie;
+	}
+
+	public void setNomCategorie(String nomCategorie){
 	
+	   this.getCategorie();
+	}
+	
+	
+	public String getIdcategorie(){
+	    String idcategorie = null;
+		return idcategorie;
+	}
 	
 	
 }
